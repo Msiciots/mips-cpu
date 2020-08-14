@@ -180,7 +180,3 @@ module Controller ( opcode,
 	end
 	
 endmodule
-
-
-
-

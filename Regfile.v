@@ -40,9 +40,3 @@ module Regfile ( clk,
 	end
 	
 endmodule
-
-
-
-
-
-

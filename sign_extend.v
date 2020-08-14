@@ -12,9 +12,3 @@ module sign_extend ( in,
     
   assign out = { {16{in[15]}},in };
 endmodule	
-	
-	
-	
-	
-	
-	

@@ -71,10 +71,3 @@ module FU ( // input
 	end
 	
 endmodule
-
-
-
-
-
-
-

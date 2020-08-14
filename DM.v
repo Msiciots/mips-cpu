@@ -32,10 +32,3 @@ module DM (	clk,
 	end
 	
 endmodule
-
-
-
-
-
-
-

@@ -22,4 +22,3 @@ module PC ( clk,
 		PCout <= rst ? 0 : w_PCout;
 		   
 endmodule
-

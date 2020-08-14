@@ -21,8 +21,3 @@ module Mux2to1 ( I0,
 	 assign out = (S==0)?I0:I1 ;
 
 endmodule
-
-
-
-
-

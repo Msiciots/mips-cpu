@@ -56,8 +56,3 @@ module ALU ( ALUOp,
 	end
 
 endmodule
-
-
-
-
-

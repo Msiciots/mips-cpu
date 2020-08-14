@@ -14,8 +14,3 @@ module ADD ( A,
 	assign Cout = A + B;
 
 endmodule
-
-
-
-
-

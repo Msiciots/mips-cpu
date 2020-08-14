@@ -35,8 +35,3 @@ module Mux4to1 ( I0,
 	end
 	
 endmodule
-
-
-
-
-

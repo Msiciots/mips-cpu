@@ -18,10 +18,3 @@ module IM (	clk,
 	assign Instruction = IM_data[IM_Address];
 	
 endmodule
-
-
-
-
-
-
-

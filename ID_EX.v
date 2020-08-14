@@ -178,13 +178,3 @@ module ID_EX ( clk,
 	end			
 	
 endmodule
-
-
-
-
-
-
-
-
-
-
