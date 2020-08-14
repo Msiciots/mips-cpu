@@ -1,1 +1,0 @@
-# Pipelined MIPS CPU
