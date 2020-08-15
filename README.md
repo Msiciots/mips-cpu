@@ -25,10 +25,14 @@ The data hazard and control hazard problems are handled by the hazard detection 
 **Assembler syntax**
 | instruction | rd | rs |rt|
 | -------- | -------- | -------- | --------|
+
 **Machine code format**
+
 | opcode | rs | rt |rd|shamt|funct|
 | -------- | -------- | -------- | --------|--------|--------|
+
 **Instruction list**
+
 | Opcode | Mnemonics | SRC1 |SRC2|DST|funct|Description|
 | -------- | -------- | -------- | --------|--------|--------|--------|
 |000000|nop|00000|00000|00000|000000|No operation|
@@ -47,10 +51,14 @@ The data hazard and control hazard problems are handled by the hazard detection 
 **Assembler syntax**
 | instruction | rt | rs |imm|
 | -------- | -------- | -------- | --------|
+
 **Machine code format**
+
 | opcode | rs | rt |immediate|
 | -------- | -------- | -------- | --------|
+
 **Instruction list**
+
 | Opcode | Mnemonics | SRC1 |DST|SRC2|Description|
 | -------- | -------- | -------- | --------|--------|--------|
 |001000|addi|$Rs| $Rt| imm|Rt = Rs + imm0|
@@ -66,9 +74,12 @@ The data hazard and control hazard problems are handled by the hazard detection 
 **Assembler syntax**
 | instruction | target(label)|
 | -------- | -------- | 
+
 **Machine code format**
+
 | opcode | address|
 | -------- | -------- | 
+
 **Instruction list**
 | Opcode | Mnemonics | Address |Description|
 | -------- | -------- | -------- | --------|
