@@ -7,14 +7,16 @@ Figure 1. shows the CPU datapath. The pipelined CPU has five stages:
 - EX: execution and address calculation
 - MEM: memory access
 - WB: write back 
+<center>
+<img src="https://i.imgur.com/PiTkZlS.png">
 
-![cpu-datapath](https://i.imgur.com/PiTkZlS.png)
-<center>Figure 1. The CPU datapath</center><p>  </p>
+Figure 1. The CPU datapath</center><p>  </p>
 
 There are four pipeline registers (IF_ID, ID_EX, EX_M and M_WB) between the five stages. These pipeline registers can store the data & control signals of the instructions and pass the information from one stage to next stage. These modules are sequential circuits and they are triggered by negative clock edges. The program counter is stored in the PC module and also triggered by negative clock edges. Figure 2. shows the clock trigger.  
+<center>
+<img src="https://i.imgur.com/8NCZpjw.png" width="50%">
 
-![clock-trigger](https://i.imgur.com/8NCZpjw.png)
-<center>Figure 2. The CPU clock trigger</center><p>  </p>
+Figure 2. The CPU clock trigger</center><p>  </p>
 
 The instruction and data memory are IM and DM modules. Both of these modules are triggered by positive clock edges.
 
@@ -87,27 +89,26 @@ The data hazard and control hazard problems are handled by the hazard detection 
 |000011|jal|jumpAddr| R[31] = PC + 8 ; PC = jumpAddr| 
 
 ## Verification
-Run testfixture1.v to verify the CPU. And the executed instructions are located at "/tb1/IM_data.dat".
+Run testfixture1.v to verify the CPU. The executed instructions are stored at "/tb1/IM_data.dat". And the calculation results are stored at "/tb1/golden_DM.dat"
 
 ### Forwarding
-#### R-type
-12: sw $s1, 4($a0)  
-13: add $s2, $s0, $s1 # $s2 = 16 + 31 = 47 (101111)
-![](https://i.imgur.com/c8Sqmkg.png)
-
-#### I-type
 31: sll $s0, $s0, 1 # $s0 = 32767 * 2 = 65534  
 32: addi $s0, $s0, 1 # $s0 = 65535 
-![](https://i.imgur.com/NJRNJ19.png)
+![](https://i.imgur.com/1EkzH3I.png)
 
 ### Load Stall
 37: lw $s0, 40($a0) # $s0 = 65535  
-38: sw $s0, 48($a0)  
-To stall:  
+37-2: add $s0, $s0, $0 # $s0 = 65535  
+**To stall:**  
 PC_Write = 0   
 IF_IDWrite = 0     
-IF_Flush = 0   
-ID_Flush = 0  
-![](https://i.imgur.com/SGtacvA.png)
+![](https://i.imgur.com/nr2infD.png)
 
-### Branch Delay
+### Branch Stall
+fun3: bne $8, $0, 0 [fun4-0x004000d8]; Jump to fun4   
+After a branch detection, IF_ID flush.
+![](https://i.imgur.com/rAKfRvY.png)
+
+## Reference
+
+David Patterson, & John Hennessy (2013). *Computer Organization and Design MIPS Edition: The Hardware/Software Interface* (5th ed.). Morgan Kaufmann.
