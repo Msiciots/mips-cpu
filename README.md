@@ -89,7 +89,7 @@ The data hazard and control hazard problems are handled by the hazard detection 
 |000011|jal|jumpAddr| R[31] = PC + 8 ; PC = jumpAddr| 
 
 ## Verification
-Run testfixture1.v to verify the CPU. The executed instructions are stored at "/tb1/IM_data.dat". And the calculation results are stored at "/tb1/golden_DM.dat"
+Run testfixture1.v to verify the CPU. The executed instructions are stored at "/tb1/IM_data.dat". And the calculation results are compared to "/tb1/golden_DM.dat"
 
 ### Forwarding
 31: sll $s0, $s0, 1 # $s0 = 32767 * 2 = 65534  
