@@ -8,13 +8,13 @@ Figure 1. shows the CPU datapath. The pipelined CPU has five stages:
 - MEM: memory access
 - WB: write back 
 <center>
-<img src="https://i.imgur.com/PiTkZlS.png">
+<img src="https://github.com/Msiciots/mips-cpu/raw/master/doc-img/datapath.png">
 
 Figure 1. The CPU datapath</center><p>  </p>
 
 There are four pipeline registers (IF_ID, ID_EX, EX_M and M_WB) between the five stages. These pipeline registers can store the data & control signals of the instructions and pass the information from one stage to next stage. These modules are sequential circuits and they are triggered by negative clock edges. The program counter is stored in the PC module and also triggered by negative clock edges. Figure 2. shows the clock trigger.  
 <center>
-<img src="https://i.imgur.com/8NCZpjw.png" width="50%">
+<img src="https://github.com/Msiciots/mips-cpu/raw/master/doc-img/trigger.png" width="50%">
 
 Figure 2. The CPU clock trigger</center><p>  </p>
 
@@ -94,7 +94,7 @@ Run testfixture1.v to verify the CPU. The executed instructions are stored at "/
 ### Forwarding
 31: sll $s0, $s0, 1 # $s0 = 32767 * 2 = 65534  
 32: addi $s0, $s0, 1 # $s0 = 65535 
-![](https://i.imgur.com/1EkzH3I.png)
+![](https://github.com/Msiciots/mips-cpu/raw/master/doc-img/forwarding-test.png)
 
 ### Load Stall
 37: lw $s0, 40($a0) # $s0 = 65535  
@@ -102,12 +102,12 @@ Run testfixture1.v to verify the CPU. The executed instructions are stored at "/
 **To stall:**  
 PC_Write = 0   
 IF_IDWrite = 0     
-![](https://i.imgur.com/nr2infD.png)
+![](https://github.com/Msiciots/mips-cpu/raw/master/doc-img/load-test.png)
 
 ### Branch Stall
 fun3: bne $8, $0, 0 [fun4-0x004000d8]; Jump to fun4   
 After a branch detection, IF_ID flush.
-![](https://i.imgur.com/rAKfRvY.png)
+![](https://github.com/Msiciots/mips-cpu/raw/master/doc-img/branch-test.png)
 
 ## Reference
 
